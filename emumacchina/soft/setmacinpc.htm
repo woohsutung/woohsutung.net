@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META content="MSHTML 5.00.2920.0" name=GENERATOR></HEAD>
+<BODY bgColor=#6b63ce>
+<P><FONT face=Arial><STRONG>在Windows上安装MacOS 8.1 </STRONG></FONT></P>
+<P><FONT face="">&nbsp;&nbsp;&nbsp; 
+Macintosh模拟器的出现使得我们能够把原本为Macintosh设计的OS安装到完全不同的硬件平台－IBM 
+PC兼容机上。为了帮助大家更加容易的在自己的PC上安装MacOS，我参考了一些e文文档，把自己在Windows98上安装MacOS 
+8.1的经验和大家一起分享。</FONT></P>
+<P><FONT face="">&nbsp;&nbsp;&nbsp; 在windows上安装MacOS 8.1之前，你必须准备以下软件：</FONT></P>
+<P><FONT face="">&nbsp;&nbsp;&nbsp; 1）模拟器软件，SoftMac，Basilisk 
+II，Fusion都可以；</FONT></P>
+<P><FONT face="">&nbsp;&nbsp;&nbsp; 2）MacROM映像文件，OS 
+8.1需要512K以上的ROM支持，我们选的是1M的ROM映像文件，假设文件名为mac1024.rom；</FONT></P>
+<P><FONT face="">&nbsp;&nbsp;&nbsp; 3）MacOS 
+8.1安装盘，软盘或者光盘都可以，我们选的是安装光盘；</FONT></P>
+<P><FONT face="">&nbsp;&nbsp;&nbsp; 
+4）Mac的硬盘分区或者磁盘映像文件，一般的PC上要获得Mac的硬盘分区有难度，我们可以选择用磁盘映像文件，我们提供了一个已经装有OS 
+7.5.5的DSK磁盘映像文件－macos755.DSK，当然你也可以用HFVExplorer生成一个任意大小的HFV磁盘映像来使用。</FONT></P>
+<P><FONT 
+face="">&nbsp;&nbsp;&nbsp;&nbsp;第一步，把上述1，2，4的文件copy到同一个目录（文件夹）下，比如说是：D:\macos\，运行模拟器，选择ROM映像和磁盘映像：在SoftMac中，从Options菜单选择First 
+Time Setup...,从出现的对话框里选取Search Hard 
+disk选项，并从Path...按钮选择ROM映像所在的路径（文件夹），然后按Search按钮，就会出现ROM映像文件的文件名，然后按Close按钮即可完成ROM映像的选择；对于B2，则启动BasiliskIIGUI，从Memory标签里选择ROM映像所在路径。</FONT></P>
+<P>&nbsp;&nbsp;&nbsp; 
+第二步，选择可以启动的硬盘映像。由于macos755.DSK包含了OS7.5.5，所以只要直接把macos755.DSK挂到模拟器即可，具体方法是：对于SoftMac，选择Options菜单里的Disk 
+Properties...选项，从对话框上部的列表里选中驱动器，比如说Mac SCSI 
+device0，在从对话框下部选择PC上的设备来映射这个驱动器，比如说Floopy－软驱，或者Disk Image Files－磁盘映像文件，或者SCSI 
+Device－SCSI设备（包括光驱），一般的选择是这样，Mac Internal Floopy用Floopy映射，Mac External 
+Floopy用Disable，Mac CDROM or SCSI Device0用Disk image 
+files，这里我们用macos755.dsk文件，Mac CDROM or SCSI Device1用SCSI 
+Device－实际上是光驱；对于B2，分别从GUI里选择DISK，Floopy，CD选项来选择映像文件或者PC设备，同样我们选macos755.dsk文件映射Disk，A:\映射Floopy，光驱e:\映射CD。需要注意的是，为了能够让模拟器识别光驱，必须把cdenable.sys拷贝到windows\system\下（95/98）或者把cdenable.vxd拷贝到winnt\system32\下（NT/2K）!</P>
+<P>&nbsp;&nbsp;&nbsp; 
+第三步，调整其他设置。对于SoftMac，选择Options菜单里的Propertie选项，在对话框里调整设置；对于B2，在GUI的keyboard，Screen，Mouse等选项里调整设置。</P>
+<P>&nbsp;&nbsp;&nbsp; 
+第四步，启动模拟器：&nbsp;对于SoftMac，只要按Continue按钮即可；B2则按GUI里的RUN按钮，就可以启动你的Mac了！由于磁盘映像里是7.5.5，Mac启动的也是7.5.5，接下来的工作就是安装OS 
+8.1了，安装的方法和在一台普通的Mac上安装没有什么不同，这里就步多说了。如果觉得硬盘太小（磁盘映像文件由于上传的缘故只有14M），HFVExplorer或者MakeDSK等工具可以生成任意大小的硬盘映像文件，作为你的Mac的硬盘:)&nbsp;&nbsp;需要注意的是，对于老版本的B2，8.0以上版本的Finder可能会有BUG，建议使用7.6的Finder；对于老版本SoftMac，安装完8.0/8.1以后的第一次重起，&nbsp;按示shift键屏蔽所有extensions，在到control 
+panels里的ExtensionsManager把所有有关OpenTransport的Extension关闭掉。还有不管哪种模拟器，都要把control 
+panels里Memory选项中的虚拟内存（virtual memory）关掉！</P>
+<P>&nbsp;&nbsp;&nbsp; 好了，再一次重新启动模拟器，MacOS 8.1就从你的PC硬盘上启动了:)</P></BODY></HTML>

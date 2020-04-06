@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>如何获取ROM映像文件</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body bgcolor="#6b61ce" text="#000000" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF" leftmargin="10" topmargin="10" marginwidth="10" marginheight="10">
+<blockquote>
+  <p><font size="5"><b>如何获取Mac ROM映像文件<br>
+    </b></font><i>作者 Jim Watters 翻译 <a href="mailto:fishinxihu@sohu.com">Fishinxihu</a></i></p>
+</blockquote>
+<hr size="1" width="98%" color="#000000" align="center">
+<blockquote>
+  <p> <br>
+    <b><font face="黑体">译者注：</font></b>本文源自<a href="http://mes.emuunlim.com/">Macintosh 
+    Emulation Station</a>网站，译者对自己认为应该附加说明的地方都以译者注的形式标出，为方便理解，<a href="http://mes.emuunlim.com/tips/capturing_a_mac_rom_image.htm">给出原文（英文）的链接，您可以直接参阅原文</a>。</p>
+  <p align="left"> 在你开始使用Basilisk II, Fusion PC 或者SoftMac之前，你需要Macintosh的ROM映像文件。获得你自己的ROM映像文件的过程非常简单，只需要几个步骤就行。这篇文章就向你介绍如何一步一步地获取一个ROM映像文件。</p>
+  <p align="left"><br>
+    第一步：购买一台Macintosh<br>
+    不幸的是，你必须合法地拥有一台的Macintosh，才能从中获取一个ROM映像文件给你的模拟器使用。为了运行现在的Mac模拟器，你需要从任何一台68030或者68040的Macintosh上取得ROM映像文件，也许不久以后就会有需要PowerMac的ROM映像文件的PowerPC的模拟器。除了去当地的Macintosh商店（在黄页号薄的“计算机修理/销售”项下可以找到苹果电脑的授权经销商）寻找，eBay也是廉价Macintosh的一个好的来源。记住，除非你有PowerPC模拟器，你需要的是一台68030或68040作处理器的Macintosh。</p>
+  <p align="left"><br>
+    第二步：保证你的Mac上面已经安装了PC Exchange<br>
+    因为你是通过一张PC格式的软盘把你的ROM映像文件从Mac传输到PC上，MacOS需要安装PC Exchange软件以识别使用PC格式的磁盘。所有版本高于7.5的MacOS都带有PC 
+    Exchange，在Mac中的control panels文件夹查找名为PC Exchange的Control Pannel，如果有的话，继续下一步；如果没有的话，你需要通过MacOS的安装盘来安装PC 
+    Exchange。<br>
+    另外，如果你运行的是MacOS8.5,8.6或者9（译者注：或者更高的版本，例如MacOS X），你使用的就是PowerMac，不是680x0的Mac（译者注：这就意味着你从中获得的ROM映像文件不能用于现在的这些模拟器）。</p>
+  <p align="left"><br>
+    第三步：下载需要的软件<br>
+    你需要两样软件：Aladdin Stuffit Expander（译者注：一般来说，Mac上都安装了这个软件，如果没有的话，你可以下载一个到你的Mac上，或者下载到你的PC上，开启Mac上的PC 
+    Exchange，再用软盘把它拷贝到Mac上）和一种“ROM映像俘获程序”，例如GetROM，许多Basilisk II软件里都附带这个程序（在文件夹“ROM 
+    Dumping Utility”中），或者使用CopyROM这个程序。<br>
+    下载“ROM映像俘获程序”到你的Mac上；或者下载到PC上，但你需要把文件传输到Mac上才能用它－一张PC格式的软盘即可完成这个任务。现在你的Mac的硬盘上已经有了GetRom.sit.hqx或者CopyROM－是不是?:)<br>
+    注意：有人在一台Mac上使用两个程序生成了两个ROM映像文件，有时候每一个“ROM映像俘获程序”生成的ROM映像文件互不相同，但是你不必为此担心（译者注：使用证明，两个不同的ROM映像文件都可以使用）。</p>
+  <p align="left"><br>
+    第四步：解压缩“ROM映像俘获程序”<br>
+    我假定你已经安装了Stuffit Expander，双击Mac桌面上的Stuffit Expander图标，使Stuffit Expander运行，从File菜单选择Unstuff，打开一个类似下图（译者注：图1）的对话框，寻找到你存放压缩的“ROM映像俘获程序”的位置，选择它，然后单击对话框中的Expand按钮。“ROM映像俘获程序”被解压缩到和压缩文件相同的文件夹中，它可能叫CopyROM（本文将要使用的程序）或者GetROM，见下图（译者注：图2）：</p>
+  <p align="center"><img src="f1.jpg" width="640" height="480" align="middle"><br>
+    图1</p>
+  <p align="center"><img src="f2.jpg" width="640" height="480"><br>
+    图2</p>
+  <p align="left"><br>
+    第五步：关闭全部Extension，重启Mac<br>
+    为了使“ROM映像俘获程序”得到“干净的”（译者注：原文为clean）ROM映像，我们强烈要求你关闭所有Extension，并重新启动MacOS－你只需要在重新启动系统，并按住shift键即可－这样Mac会进入一个纯净的环境，所有的Extension和Control 
+    Pannel驱动，例如打印机，网络访问等都被禁止了（译者注：有点类似以安全模式进入Windows9x，系统将只最小化地运行必须的驱动程序和配置），除非你重新正常启动。在第八步中重启你的系统以前，你也不能访问PC格式的软盘（译者注：因为PC 
+    Exchange Extension也被禁止了）。</p>
+  <p align="left"><br>
+    第六步：运行“ROM映像俘获程序”并把ROM映像文件保存到一个文件夹<br>
+    双击文件，运行“ROM映像俘获程序”。当ROM信息窗口出现时，我们建议至少把ROM校验和（译者注：原文是ROM checksum info)记在纸上。十六进制数字表示的ROM校验和，对于解决将来使用Mac模拟器过程中出现的问题是非常重要的。当然如果你现在没有记下，你仍然可以在以后得到这些信息。记下信息后，就可以点击OK按钮。见下图(译者注：图3）。</p>
+  <p align="center"><img src="f3.jpg" width="640" height="480"><br>
+    图3</p>
+  <p align="left"><br>
+    现在你可以把ROM映像文件保存到磁盘，我建议你把文件改名保存，用前面记下的校验和来命名文件（你是不是已经记下了？）。重要提示：Fusion和SoftMac需要以&quot;rom&quot;为扩展名来命名ROM映像文件。例如：FF7439EE.rom（译者注：其中FF7439EE是前面记录下来的校验和，用来做主文件名，rom是扩展名）。你可以在使用这两种模拟器前的任何时候把“.rom”加上。见下图(译者注：图4）。</p>
+  <p align="center"><img src="f4.jpg" width="640" height="480"><br>
+    图4</p>
+  <p align="left"><br>
+    第七步：检查ROM映像文件的文件大小<br>
+    68KMac模拟器（Basilisk II，Fusion PC和SoftMac）可以使用512KB或1MB的ROM映像文件。512KB的ROM映像文件来自于较早型号的Macintosh－这些Mac不能运行高于7.5.5或者7.6.1的OS（例如OS8.X）。如果你有1MB的ROM映像文件，很幸运，你可以在Mac模拟器上运行OS8.1。见下图（译者注：图5）。如果你的ROM映像文件大于1MB，你的Mac就是PowerMac或者Quadra660av或者840av。（译者注：这种ROM映像文件不能被模拟器识别并运行！）</p>
+  <p align="center"><img src="f5.jpg" width="640" height="480"><br>
+    图5</p>
+  <p align="left"><br>
+    第八步：重新启动你的Macintosh<br>
+    正常启动你的Mac后，你可以把ROM映像文件拷贝到软驱中的PC格式的软盘中。</p>
+  <p align="left"><br>
+    第九步：把ROM映像文件传送到PC<br>
+    把ROM映像文件拷贝到Windows中包含模拟器软件的目录（译者注：即文件夹）中。这样你就完成了获取ROM映像文件的过程。现在你要做的是生成一个硬盘文件（HDF）并把MacOS安装上去，详细过程参见我的网站上的其他文章。 
+  </p>
+  </blockquote>
+</body>
+</html>
